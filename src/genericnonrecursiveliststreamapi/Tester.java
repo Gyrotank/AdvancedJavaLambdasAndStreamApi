@@ -15,7 +15,7 @@ public class Tester {
 	//n -> number -> number != null && number%n == 0;
 	public static final Function<Integer, Predicate<Integer>> isDivisibleByN = (Integer n) -> {
 		Predicate<Integer> checkDivisibility = (Integer number) -> 
-		number != null && number%n == 0;
+			number != null && number%n == 0;
 		return checkDivisibility;
 	};
 	

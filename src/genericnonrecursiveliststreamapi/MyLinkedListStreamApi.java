@@ -63,7 +63,7 @@ public class MyLinkedListStreamApi<T> implements Iterable<T> {
 		}
 
 		public void forEachRemaining(Consumer<? super T> action) {
-			while (listPointer != null) {
+			while (currIndex < fence) {
 				action.accept(listPointer.data);
 				listPointer = listPointer.next;
 				currIndex++;
@@ -71,7 +71,7 @@ public class MyLinkedListStreamApi<T> implements Iterable<T> {
 		}
 
 		public boolean tryAdvance(Consumer<? super T> action) {
-			if (listPointer != null) {
+			if (currIndex < fence) {
 				action.accept(listPointer.data);
 				listPointer = listPointer.next;
 				currIndex++;

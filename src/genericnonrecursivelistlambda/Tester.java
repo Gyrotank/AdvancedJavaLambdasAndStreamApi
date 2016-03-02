@@ -18,8 +18,8 @@ public class Tester {
 		myList.insert(22, 15);
 		myList.insert(33, 2);
 		
-		myList.forEach(i -> System.out.print(i + "; "));
-		System.out.println();
+		//myList.forEach(i -> System.out.print(i + "; "));
+		System.out.println(myList);
 		System.out.println(myList.contains(50));		
 		System.out.println(myList.contains(null));
 		System.out.println(myList.contains(1));

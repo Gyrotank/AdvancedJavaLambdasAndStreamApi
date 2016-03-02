@@ -147,22 +147,22 @@ public class MyLinkedListLambda<T> implements Iterable<T> {
 	}
 	
 	//toString() using explicit external iterator
-	public String toString() {
-		if (size == 0) {
-			return "List is empty";
-		}
-		
-		Iterator<T> outputIterator = iterator();
-		
-		StringBuilder res = new StringBuilder();		
-		
-		while (outputIterator.hasNext()) {
-			res.append(outputIterator.next());
-			res.append("; ");
-		}
-		
-		return res.toString();
-	}
+//	public String toString() {
+//		if (size == 0) {
+//			return "List is empty";
+//		}
+//		
+//		Iterator<T> outputIterator = iterator();
+//		
+//		StringBuilder res = new StringBuilder();		
+//		
+//		while (outputIterator.hasNext()) {
+//			res.append(outputIterator.next());
+//			res.append("; ");
+//		}
+//		
+//		return res.toString();
+//	}
 	
 	//toString() using implicit external iterator
 //	public String toString() {
@@ -194,18 +194,18 @@ public class MyLinkedListLambda<T> implements Iterable<T> {
 //	}
 	
 	//toString using internal iterator with lambda expression
-//	public String toString() {
-//		if (size == 0) {
-//			return "List is empty";
-//		}
-//
-//		StringBuilder res = new StringBuilder();
-//
-//		this.forEach(data ->
-//			res.append(data + "; "));
-//		
-//		return res.toString();
-//	}
+	public String toString() {
+		if (size == 0) {
+			return "List is empty";
+		}
+
+		StringBuilder res = new StringBuilder();
+
+		this.forEach(data ->
+			res.append(data + "; "));
+		
+		return res.toString();
+	}
 	
 	//toString using internal iterator with method reference
 	//not good since we can't pass arguments and add dividers
