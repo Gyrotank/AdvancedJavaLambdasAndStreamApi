@@ -102,20 +102,29 @@ public class Element {
         return contains(new Element(data));
     }
     
-    public boolean equals(Element el) {
+    public boolean equals(Object el) {
         if (el == null) {
             return false;
         }
         
-        if ((el.data == null) && (this.data == null)) {
-            return true;
-        }
-        
-        if ((el.data == null) || (this.data == null)) {
+        if (!(el instanceof Element)) {
             return false;
         }
         
-        return (el.data.equals(this.data));
+        if ((((Element) el).data == null) && (this.data == null)) {
+            return true;
+        }
+        
+        if ((((Element) el).data == null) || (this.data == null)) {
+            return false;
+        }
+        
+        return ((((Element) el).data.equals(this.data)));
+    }
+    
+    public int hashCode() {
+        assert false : "hashCode not designed";
+        return 42; // any arbitrary constant will do
     }
     
     public String toString() {
